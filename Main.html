@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oscar Owen - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('background 4.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensures the background image covers the entire screen */
+  background-position: center; /* Centers the image */
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  animation: neonBackground 1.5s infinite alternate; /* Keep your existing animation */
+}
+
+
+    /* Neon Background Glow Animation */
+    @keyframes neonBackground {
+      0% {
+        background-color: #111;
+      }
+      100% {
+        background-color: #222;
+      }
+    }
+
+    /* Add entry animation for square box */
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+     /* Square Box at the Center Top */
+    .social-square-box {
+      width: 900px;
+      height: 800px;
+      left: 160px;
+      background: #00ffcc;
+      display: flex;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative; /* To position text over it */
+      animation: slideIn 1s ease-out forwards; /* Add entry animation */
+      cursor: pointer;
+      box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc, 0 0 90px #00ffcc; /* Neon border effect */
+    }
+
+
+    .social-square-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Text Overlay with Neon Glow */
+    .text-overlay {
+      position: absolute;
+      top: 30%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #00ffcc, 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc; /* Neon glow */
+      text-align: center;
+      animation: fadeInUp 4s ease-out forwards;
+    }
+
+    /* Left Panel */
+    .left-panel {
+      width: 25%;
+      height: 100vh; /* Set to 100% viewport height */
+      background: #111;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-y: auto; /* Enable vertical scrolling */
+      box-shadow: 0 0 30px #00ffcc; /* Neon shadow effect */
+    }
+
+    /* Profile Picture Circle Below Square */
+    .social-circle-profile {
+      width: 150px;
+      height: 150px;
+      background: #00ffcc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc; /* Neon glow */
+    }
+
+    .social-circle-profile:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px #00ffcc; /* Increase neon glow on hover */
+    }
+
+    .social-circle-profile img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .left-panel h1 {
+      font-size: 1.8rem;
+      color: #00ffcc;
+      text-shadow: 0 0 5px #fff, 0 0 10px #00ffcc, 0 0 15px #00ffcc; /* Neon glow */
+    }
+    .left-panel p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    /* Social Media Circles */
+    .social-circles {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .social-circle {
+      width: 40px;
+      height: 40px;
+      background: #00ffcc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc; /* Neon glow */
+    }
+    .social-circle:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px #00ffcc; /* Increase neon glow on hover */
+    }
+
+    /* Navigation Links */
+    .nav-links {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav-links a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.3s;
+      text-shadow: 0 0 5px #fff, 0 0 10px #00ffcc, 0 0 15px #00ffcc; /* Neon glow */
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 25%;
+      width: 75%;
+      padding: 40px;
+      margin-top: 5px; /* Move content below the social media section */
+    }
+    .section {
+      background: #222;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.5s ease-out;
+      box-shadow: 0 0 20px #00ffcc; /* Neon glow */
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Hobbies */
+    .hobbies-container {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+    }
+    .hobby-box {
+      margin-top: 40px;
+      width: 30%;
+      background: #333;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffcc; /* Neon glow */
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin-top: 40px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #00ffcc;
+    }
+    .timeline-box {
+      width: 30%;
+      background: #333;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 15px #00ffcc; /* Neon glow */
+    }
+
+    /* Projects & Work */
+    .projects-work-container {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+    }
+    .projects-work-box {
+      margin-top: 40px;
+      width: 30%;
+      background: #333;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffcc; /* Neon glow */
+    }
+
+    /* Personal Touch */
+    .personal-touch-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #333;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+    .personal-touch-box {
+      width: 60%;
+      background: #222;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffcc; /* Neon glow */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="social-square-box">
+    <img src="photo 1.jpeg" alt="Profile Picture">
+    <div class="text-overlay">Hiya! <br> I am Oscar Owen</div>
+  </div>
+
+  <div class="left-panel">
+    <!-- Profile Picture Circle Below Square -->
+    <div class="social-circle-profile">
+      <img src="photo.jpeg" alt="Profile Picture">
+    </div>
+    <h1>Oscar Owen</h1>
+    <p>Age: 15</p>
+    <p>Student at Rosary School</p>
+    <p>Country: India</p>
+    <p>Gender: He/Him</p>
+
+    <!-- Social Media Circles -->
+    <div class="social-circles">
+      <a href="https://instagram.com/oscar_owen07" target="_blank">
+    <div class="social-circle">
+        <img src="insta logo 1.png" alt="Instagram" />
+    </div>
+    </a>
+      <a href="https://facebook.com" target="_blank">
+    <div class="social-circle">
+        <img src="fb logo 1.png" alt="Facebook" />
+     </div>
+       </a>
+      <a href="https://twitter.com/@Oscar_Owen07" target="_blank">
+        <div class="social-circle">
+     <img src="x logo 1.png" alt="X" />
+     </div>
+      </a>
+      <a href="discordapp.com/users/1093434613956886618" target="_blank">
+        <div class="social-circle">
+       <img src="discord logo 1.png" alt="Discord" />
+      </div>
+      </a>
+    </div>
+
+    <div class="nav-links">
+      <a href="#about">About Me</a>
+      <a href="#achievements">My Achievements</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#projects">Projects & Work</a>
+      <a href="#personal-touch">Personal Touch</a>
+    </div>
+
+    <p class="footer">Thanks for visiting my website!</p>
+    <p class="footer">Developed by Oscar Owen</p>
+  </div>
+
+  <div class="main-content">
+    <section id="about" class="section">
+      <h2 align = "center">About Me</h2>
+      <p><br>A 15 year old student from India with a deep passion for programming, robotics, and aeronautics. Currently studying at Rosary High School, my goal is to pursue aeronautical engineering and become an astronomer. I'm always exploring new technologies, building AI projects, and expanding my knowledge..</p>
+    </section>
+
+    <section id="achievements" class="section">
+      <h2 align = "center">My Achievements</h2>
+      <p><br>- Successfully passed my 10th-grade boards and am now preparing for JEE and my 12th boards.
+<br>- Developed various projects including AI chatbots, voice assistants, games, and websites using Python and HTML.
+<br>- Created multiple sketches and digital drawings that reflect my creativity and attention to detail.
+<br>- Active participant in sports like cricket, volleyball, football, badminton, and tennis, promoting teamwork and fitness.</p>
+    </section>
+
+    <section id="hobbies" class="section">
+      <h2 align = "center">Hobbies & Skills</h2>
+      <div class="hobbies-container">
+        <div class="hobby-box"><b>Programming and Robotics </b><br>I create AI, games, and websites through coding, and build robots to perform tasks. I love blending software and hardware to solve problems and innovate.</div>
+        <div class="hobby-box"><b> Sports</b><br>I enjoy playing sports like cricket, football, and badminton to stay active and healthy. They keep me fit, build endurance, and teach teamwork.</div>
+        <div class="hobby-box"><b>Sketch</b><br>I express my creativity through sketching and drawing, capturing details and emotions on paper. It allows me to explore new ideas and refine my artistic skills.</div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section">
+      <h2 align = "center">Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-box"><b>Early Years</b> - Childhood in Mumbai, studying at St. Peters High School.</div>
+        <div class="timeline-box"><b>Current Journey</b> - Studying at Rosary High School in Gujarat.</div>
+        <div class="timeline-box"><b>Looking Ahead</b> - Preparing for JEE and 12th boards to secure admission into IIST.</div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 align = "center">Projects & Works</h2>
+      <div class="projects-work-container">
+        <div class="projects-work-box">
+          <h3>Python Programs</h3>
+          <p>Developed various Python programs, including a QR code generator, scanner, face detection system, translator, and exercise trainer. These projects helped me enhance my coding skills and explore different applications of Python..</p>
+        </div>
+        <div class="projects-work-box">
+          <h3>AI Integration</h3>
+          <p>Developed AURA, an AI chatbot and voice assistant, to streamline tasks and improve efficiency. AURA helps users by performing various actions, making everyday tasks simpler and faster.</p>
+        </div>
+        <div class="projects-work-box">
+          <h3>Game and Web Development</h3>
+          <p>Created simple games like Snake, Ping Pong, and Maths games in Python, along with a Car Racing game in JavaScript. Also developed this portfolio using HTML, showcasing my web development skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="personal-touch" class="section">
+      <h2 align = "center">Personal Touch</h2>
+      <div class="personal-touch-container">
+        <div class="personal-touch-box">
+          <p>"I believe in learning by doing and pushing the boundaries of creativity. Life is about embracing challenges and making a difference, no matter how small."</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const scrollElements = document.querySelectorAll('.section');
+    const elementInView = (el, percentage = 0.5) => {
+      const elementTop = el.getBoundingClientRect().top;
+      return elementTop <= (window.innerHeight || document.documentElement.clientHeight) * percentage;
+    };
+    const displayScrollElement = (el) => {
+      el.classList.add('visible');
+    };
+    const handleScrollAnimation = () => {
+      scrollElements.forEach((el) => {
+        if (elementInView(el)) {
+          displayScrollElement(el);
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScrollAnimation);
+    window.addEventListener('load', handleScrollAnimation);
+  </script>
+<p class="footer">© 2025 Oscar Owen. All rights reserved.</p>
+</body>
+</html>

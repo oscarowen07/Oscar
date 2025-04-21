@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>19 April 2025 by Oscar Owen</title>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;600&family=Sassy+Frass&family=Yellowtail&display=swap" rel="stylesheet">
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		::-webkit-scrollbar {
+			width: 20px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #ae9d72;
+			background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #ae9d72;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background: #8bba98;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			overflow: hidden;
+			background: #697854;
+			margin: 0;
+			padding: 0;
+			font-family: "Josefin Slab", serif;
+		}
+
+		.background {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url("https://picsum.photos/id/112/3840/2160");
+			background-size: cover;
+			background-position: center top;
+			z-index: -1;
+			filter: blur(10px);
+		}
+
+		.woolf {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url("https://i.imgur.com/vxGALKl.png");
+			background-position: top left;
+			background-size: 500px;
+			background-repeat: no-repeat;
+			z-index: 0;
+			mix-blend-mode: hard-light;
+			opacity: 0.8;
+		}
+
+		.content-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: auto;
+			filter: drop-shadow(5px 5px 25px black);
+		}
+
+		.content {
+			position: relative;
+			top: 10px;
+			background: url("https://i.imgur.com/0kjMcUe.png");
+			background-size: 1000px;
+			background-position: center right;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			width: 50%;
+			height: auto;
+			padding: 30px 80px 50px 80px;
+			z-index: 1;
+			filter: brightness(0.95) sepia(30%) saturate(80%);
+			border-radius: 30px;
+			height: 90vh;
+			clip-path: polygon(
+				0% 0%,
+				0% 93%,
+				5% 98%,
+				6% 99%,
+				8% 95%,
+				12% 94%,
+				15% 97%,
+				17% 93%,
+				20% 98%,
+				22% 97%,
+				25% 99%,
+				31% 94%,
+				35% 93%,
+				39% 96%,
+				43% 93%,
+				45% 94%,
+				47% 95%,
+				50% 92%,
+				52% 96%,
+				54% 93%,
+				58% 92%,
+				60% 95%,
+				62% 93%,
+				65% 96%,
+				69% 93%,
+				72% 93%,
+				75% 94%,
+				79% 97%,
+				81% 94%,
+				85% 93%,
+				88% 92%,
+				90% 95%,
+				93% 93%,
+				95% 92%,
+				97% 95%,
+				100% 97%,
+				100% 0%
+			);
+			overflow: auto;
+		}
+
+		@media screen and (max-width: 1650px) {
+			.content {
+				width: 60%;
+			}
+		}
+
+		@media screen and (max-width: 1500px) {
+			.content {
+				width: 70%;
+			}
+		}
+
+		@media screen and (max-width: 868px) {
+			.content {
+				padding: 30px 60px 50px 60px;
+				width: 75%;
+			}
+		}
+
+		@media screen and (max-width: 560px) {
+			.content {
+				padding: 30px 30px 50px 30px;
+				width: 80%;
+			}
+		}
+
+		h1 {
+			font-family: "Yellowtail", cursive;
+			font-size: 80pt;
+			margin: 0;
+			font-weight: 1;
+			color: #26231e;
+			mix-blend-mode: color-burn;
+		}
+
+		@media screen and (max-width: 1071px) {
+			h1 {
+				font-size: 60pt;
+			}
+		}
+
+		@media screen and (max-width: 756px) {
+			h1 {
+				font-size: 46pt;
+				line-height: 46pt;
+				padding: 20px 0px;
+			}
+		}
+
+		@media screen and (max-width: 370px) {
+			h1 {
+				font-size: 40pt;
+			}
+		}
+
+		hr {
+			width: 80%;
+			opacity: 0.7;
+			margin-top: 20px;
+			margin-bottom: -60px;
+			border-radius: 50px;
+			padding: 40px;
+		}
+
+		h2 {
+			font-size: 30pt;
+			font-weight: 300;
+			color: #35312b;
+			text-shadow: 0.3px 0.3px 2px Sienna;
+		}
+
+		h3 {
+			text-decoration: 1px dashed underline #888;
+			letter-spacing: 2px;
+			font-size: 20pt;
+			font-weight: 300;
+			font-style: italic;
+			color: #35312b;
+			margin-bottom: 40px;
+			text-shadow: 0.6px 0.6px 1px Sienna;
+		}
+
+		@media screen and (max-width: 700px) {
+			h3 {
+				margin-bottom: 70px;
+			}
+		}
+
+		p {
+			font-size: 16pt;
+			font-weight: 400;
+			line-height: 28pt;
+			color: #565046;
+			letter-spacing: 0.5px;
+			word-spacing: 3px;
+			text-shadow: 0.2px 0.2px 1.3px Sienna;
+		}
+
+		p:first-of-type {
+			align-self: flex-start;
+			font-weight: 600;
+			position: relative;
+		}
+
+		p span {
+			font-family: "Sassy Frass", cursive;
+			font-size: 600%;
+			font-weight: 1;
+			opacity: 0.8;
+		}
+
+		@media screen and (max-width: 600px) {
+			p {
+				font-size: 14pt;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="background"></div>
+	<div class="woolf"></div>
+
+	<div class="content-container">
+		<div class="content">
+			<h1>Unexpected Fortune</h1>
+			<hr>
+			<h2>by Oscar Owen</h2>
+			<h3> 19 April 2025</h3>
+
+			<p><span>W</span>e leave pieces of ourselves in moments we’ll never return to.</p>
+			
+			<p>Today was one of those days I’ll never forget. From the moment I woke up, it felt like something good was going to happen. The sun was out, the sky was clear, and most importantly—my whole group of friends were there with me. We all met at the court early in the morning. Laughter, energy, and excitement were in the air.</p>
+
+		<p>We started our tennis matches, and to my surprise, I didn’t lose a single one. I was in full form today. Every shot I made felt right. My feet moved fast, and my racket felt like magic in my hand. My friends cheered for me, and even my coach had a big smile on his face. After the games, he came to me and handed me two new tennis balls. He said, “Good job today, you really played well.” That small gift meant a lot to me—it felt like all my practice was finally showing results.</p>
+
+		<p>After we packed up, I was walking back home with one of my close friends. While we were chatting and laughing about the day, I suddenly noticed something on the ground. It was a ₹500 note just lying there, half-covered in dust. We looked around, thinking someone must’ve dropped it. I picked it up and went straight to the security guard nearby to report it. We waited, hoping someone would come looking for it, but no one did.</p>
+
+		<p>We both stood there, holding that note, thinking what to do. Keeping it didn’t feel right. So we decided—we’ll give it to charity. Someone out there probably needs it more than us. That decision made me feel proud. It felt like the right thing to do.</p>
+
+		<p>When I got home, tired but happy, my mom was waiting for me with a chilled glass of mango juice. It was sweet, fresh, and perfect after a long day. I sat down and sipped it slowly, enjoying every drop.</p>
+
+		<p>Now it’s 11 PM. I’m lying in bed, looking outside my window. The stars are shining quietly. Everything is so peaceful. I’m just thinking... what a day it was. Wins, laughter, kindness, and a little bit of magic. I don’t know what tomorrow will bring, but today—today was beautiful.</p>
+
+		<p>Good Night, Dear Diary</p>
+        <p> <img src = "19A.jpg" alt = "star"> </p>
+		</div>
+	</div>
+</body>
+</html>
